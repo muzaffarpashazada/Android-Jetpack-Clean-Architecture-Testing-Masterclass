@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.anushka.navdemo1.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -17,7 +18,10 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
 
+        binding.button.setOnClickListener {
+            it.findNavController().navigate(R.id.action_homeFragment_to_secondFragment)
+        }
         return binding.root
     }
-    
+
 }
