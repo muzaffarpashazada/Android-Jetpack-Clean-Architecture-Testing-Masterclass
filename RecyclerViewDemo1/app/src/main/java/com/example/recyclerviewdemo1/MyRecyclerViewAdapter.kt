@@ -6,7 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MyRecyclerViewAdapter(private val fruitList: List<Fruit>) :
+class MyRecyclerViewAdapter(
+    private val fruitList: List<Fruit>,
+    private val clickListener: (Fruit) -> Unit
+) :
     RecyclerView.Adapter<MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -20,11 +23,19 @@ class MyRecyclerViewAdapter(private val fruitList: List<Fruit>) :
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.nameTextView.text = fruitList[position].name
+        holder.bind(fruitList[position], clickListener)
     }
 
 }
 
-class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-    val nameTextView: TextView = view.findViewById(R.id.name_text_view)
+class MyViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    private val nameTextView: TextView = view.findViewById(R.id.name_text_view)
+
+    fun bind(fruit: Fruit, clickListener: (Fruit) -> Unit) {
+        nameTextView.text = fruit.name
+        view.setOnClickListener {
+            clickListener.invoke(fruit)
+        }
+    }
+
 }
