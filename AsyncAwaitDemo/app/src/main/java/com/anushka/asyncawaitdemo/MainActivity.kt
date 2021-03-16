@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -17,9 +18,9 @@ class MainActivity : AppCompatActivity() {
 
         CoroutineScope(IO).launch {
             Log.e("Muzafferus", "Calculation prosses started...")
-            val firstStock = getFirstStock()
-            val secondStock = getSecondStock()
-            val total = firstStock + secondStock
+            val firstStock = async { getFirstStock() }
+            val secondStock = async { getSecondStock() }
+            val total = firstStock.await() + secondStock.await()
             Log.e("Muzafferus", "Total is $total")
         }
 
