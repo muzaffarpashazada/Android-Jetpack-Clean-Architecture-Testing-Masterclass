@@ -54,3 +54,7 @@ m
 =app/src/main/java/com/anushka/coroutinesdemo1/MainActivity.kt,4/e/4e4d3b9e63a048bba5411c8c9c89c6f28d0b362e
 @
 app/build.gradle,f/4/f4a01d6a4fcb971362ec00a83903fd3902f52164
+p
+@app/src/main/java/com/anushka/coroutinesdemo1/UserDataManager.kt,8/f/8f8bd467a39c1f5043cdf357e007cd6cd9345c8e
+q
+Aapp/src/main/java/com/anushka/coroutinesdemo1/UserDataManager2.kt,4/e/4ebb6fca540308ef29d7562424f72318b68cace0
