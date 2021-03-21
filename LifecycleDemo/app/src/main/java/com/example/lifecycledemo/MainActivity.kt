@@ -1,16 +1,18 @@
 package com.example.lifecycledemo
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.lifecycledemo.ui.main.MainFragment
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    private var progressBar: ProgressBar? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -19,12 +21,8 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, MainFragment.newInstance())
                 .commitNow()
         }
-        progressBar = findViewById(R.id.progressBar)
-        lifecycleScope.launch {
-            delay(5000)
-            progressBar?.visibility = View.VISIBLE
-            delay(5000)
-            progressBar?.visibility = View.GONE
+        lifecycleScope.launch(Dispatchers.IO) {
+            Log.e("Muzafferus", "Thread is ${Thread.currentThread().name}")
         }
     }
 }
