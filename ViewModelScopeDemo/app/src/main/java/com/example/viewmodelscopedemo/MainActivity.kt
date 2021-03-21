@@ -14,11 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mainActivityViewMode = ViewModelProvider(this).get(MainActivityViewModel::class.java)
+
         mainActivityViewMode.users.observe(this, Observer { myUsers ->
             myUsers.forEach {
                 Log.e("Yer", "$it")
             }
         })
-        mainActivityViewMode.getUserData()
     }
 }
