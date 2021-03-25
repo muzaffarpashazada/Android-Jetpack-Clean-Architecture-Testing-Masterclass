@@ -25,6 +25,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="5dp"
+            android:hint="Subscriber's name"
             android:inputType="textPersonName"
             android:text="@={myViewModel.inputName}" />
 
@@ -36,6 +37,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="15dp"
+            android:hint="Subscriber's email"
             android:inputType="textEmailAddress"
             android:text="@={myViewModel.inputEmail}" />
 
@@ -70,9 +72,10 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/subscribers_recyclerView"
+            android:id="@+id/subscriber_recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="5dp" />
+
     </LinearLayout>
 </layout>
