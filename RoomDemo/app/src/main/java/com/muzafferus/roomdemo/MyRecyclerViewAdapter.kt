@@ -30,7 +30,7 @@ class MyRecyclerViewAdapter(
 
 }
 
-class MyViewHolder(val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {
+class MyViewHolder(private val binding: ListItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(
         subscriber: Subscriber,
