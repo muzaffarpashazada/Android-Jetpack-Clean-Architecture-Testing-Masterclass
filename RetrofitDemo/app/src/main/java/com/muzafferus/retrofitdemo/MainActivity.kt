@@ -1,6 +1,7 @@
 package com.muzafferus.retrofitdemo
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -9,32 +10,36 @@ import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var retService: AlbumService
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val retrofitService: AlbumService = RetrofitInstance
+        retService = RetrofitInstance
             .getRetrofitInstance()
             .create(AlbumService::class.java)
 
+        getRequestWithPathParam()
+        getRequestWithQueryParam()
+    }
 
+    private fun getRequestWithPathParam() {
         val pathResponse: LiveData<Response<AlbumItem>> = liveData {
-            val response = retrofitService.getAlbumById(2)
+            val response = retService.getAlbumById(2)
             emit(response)
         }
         pathResponse.observe(this, Observer {
             val album = it.body()
             if (album != null) {
-                val result = " " + "Album Title :  ${album.title}" + "\n" +
-                        " " + "Album id : ${album.id}" + "\n" +
-                        " " + "Album userId : ${album.userId}" + "\n\n\n"
-
-                textView.append(result)
+                Toast.makeText(this, "Title: ${album.title}", Toast.LENGTH_SHORT).show()
             }
         })
 
+    }
+
+    private fun getRequestWithQueryParam() {
         val responseLiveData: LiveData<Response<Albums>> = liveData {
-            val response = retrofitService.getStoredAlbums(2)
+            val response = retService.getStoredAlbums(2)
             emit(response)
         }
         responseLiveData.observe(this, Observer {
@@ -46,9 +51,10 @@ class MainActivity : AppCompatActivity() {
                             " " + "Album id : ${albumListItem.id}" + "\n" +
                             " " + "Album userId : ${albumListItem.userId}" + "\n\n\n"
 
-//                    textView.append(result)
+                    textView.append(result)
                 }
             }
         })
     }
+
 }
