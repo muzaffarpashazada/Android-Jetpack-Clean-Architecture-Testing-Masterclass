@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun displayNotification() {
         val notificationId = 45
+
         val tapResultIntent = Intent(this, SecondActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
@@ -40,6 +41,30 @@ class MainActivity : AppCompatActivity() {
                 PendingIntent.FLAG_UPDATE_CURRENT
         )
 
+        //action button details
+        val intentDetails = Intent(this, DetailsActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        val pendingDetails = PendingIntent.getActivity(
+                this,
+                0,
+                intentDetails,
+                PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        val actionDetails : NotificationCompat.Action = NotificationCompat.Action.Builder(0, "Details", pendingDetails).build()
+
+        //action button settings
+        val intentSetting = Intent(this, SettingsActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        val pendingSetting = PendingIntent.getActivity(
+                this,
+                0,
+                intentSetting,
+                PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        val actionSetting : NotificationCompat.Action = NotificationCompat.Action.Builder(0, "Settings", pendingSetting).build()
+
         val notification = NotificationCompat.Builder(this@MainActivity, channelId)
                 .setContentTitle("Demo Title")
                 .setContentText("This is demo notification")
@@ -47,6 +72,8 @@ class MainActivity : AppCompatActivity() {
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setContentIntent(pendingIntent)
+                .addAction(actionDetails)
+                .addAction(actionSetting)
                 .build()
         notificationManager?.notify(notificationId, notification)
     }
