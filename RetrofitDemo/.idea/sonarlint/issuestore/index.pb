@@ -48,3 +48,9 @@ L
 .idea/codeStyles/Project.xml,6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+j
+:app/src/main/java/com/muzafferus/retrofitdemo/AlbumItem.kt,9/a/9abf267856398d1a208f3b26e66df69f3e290cff
+g
+7app/src/main/java/com/muzafferus/retrofitdemo/Albums.kt,0/f/0f9a7552af4a2961e8355d49a8a134e3f00c29f2
+m
+=app/src/main/java/com/muzafferus/retrofitdemo/AlbumService.kt,d/e/de34552e2b76af1707889473e37af71e89bdb75b

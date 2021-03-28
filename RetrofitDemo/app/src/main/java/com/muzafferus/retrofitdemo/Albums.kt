@@ -1,3 +1,3 @@
 package com.muzafferus.retrofitdemo
 
-class Album : ArrayList<AlbumItem>()
+class Albums : ArrayList<AlbumItem>()
