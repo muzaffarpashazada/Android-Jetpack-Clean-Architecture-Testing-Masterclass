@@ -54,3 +54,7 @@ g
 7app/src/main/java/com/muzafferus/retrofitdemo/Albums.kt,0/f/0f9a7552af4a2961e8355d49a8a134e3f00c29f2
 m
 =app/src/main/java/com/muzafferus/retrofitdemo/AlbumService.kt,d/e/de34552e2b76af1707889473e37af71e89bdb75b
+Y
+)app/src/main/res/layout/activity_main.xml,7/6/76b07e40f24cce093536731477540f12e7da3cb6
+q
+Aapp/src/main/java/com/muzafferus/retrofitdemo/RetrofitInstance.kt,0/1/01066700fe7854f91e0ca90157c847b32ba5c812
