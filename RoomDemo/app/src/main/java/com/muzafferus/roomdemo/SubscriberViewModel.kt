@@ -1,5 +1,6 @@
 package com.muzafferus.roomdemo
 
+import android.util.Patterns
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.lifecycle.LiveData
@@ -44,11 +45,15 @@ class SubscriberViewModel(private val repository: SubscriberRepository) : ViewMo
 
 
     fun saveOrUpdate() {
-        val name = inputName.value
-        val email = inputEmail.value
-        if (name == null || email == null) {
-            return
-        } else {
+        if (inputName.value == null) {
+            statusMessage.value = Event("Please enter Subscriber's name")
+        } else if (inputEmail.value == null) {
+            statusMessage.value = Event("Please enter Subscriber's email")
+        } else if(!Patterns.EMAIL_ADDRESS.matcher(inputEmail.value!!).matches()){
+            statusMessage.value = Event("Please enter a correct email address")
+        }else {
+            val name = inputName.value!!
+            val email = inputEmail.value!!
             if (isUpdateOrDelete) {
                 subscriberToUpdateOrDelete.name = name
                 subscriberToUpdateOrDelete.email = email
@@ -59,6 +64,7 @@ class SubscriberViewModel(private val repository: SubscriberRepository) : ViewMo
             inputName.value = null
             inputEmail.value = null
         }
+
     }
 
     fun clearOrDelete() {
