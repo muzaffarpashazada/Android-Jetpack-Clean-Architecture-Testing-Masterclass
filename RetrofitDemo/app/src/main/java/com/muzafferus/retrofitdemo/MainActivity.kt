@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             .getRetrofitInstance()
             .create(AlbumService::class.java)
         val responseLiveData: LiveData<Response<Albums>> = liveData {
-            val response = retrofitService.getAlbums()
+            val response = retrofitService.getStoredAlbums(2)
             emit(response)
         }
         responseLiveData.observe(this, Observer {
