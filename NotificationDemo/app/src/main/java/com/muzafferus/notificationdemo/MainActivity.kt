@@ -9,12 +9,14 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
+import androidx.core.app.RemoteInput
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private val channelId = "com.muzafferus.notificationdemo.channel1"
     private var notificationManager: NotificationManager? = null
+    private val KEY_REPLY = "key_reply"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +43,18 @@ class MainActivity : AppCompatActivity() {
                 PendingIntent.FLAG_UPDATE_CURRENT
         )
 
+        //reply action
+        val remoteInput: RemoteInput = RemoteInput.Builder(KEY_REPLY).run {
+            setLabel("Insert your name here")
+            build()
+        }
+
+        val replyAction: NotificationCompat.Action = NotificationCompat.Action.Builder(
+                0,
+                "Reply",
+                pendingIntent).addRemoteInput(remoteInput)
+                .build()
+
         //action button details
         val intentDetails = Intent(this, DetailsActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -51,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                 intentDetails,
                 PendingIntent.FLAG_UPDATE_CURRENT
         )
-        val actionDetails : NotificationCompat.Action = NotificationCompat.Action.Builder(0, "Details", pendingDetails).build()
+        val actionDetails: NotificationCompat.Action = NotificationCompat.Action.Builder(0, "Details", pendingDetails).build()
 
         //action button settings
         val intentSetting = Intent(this, SettingsActivity::class.java).apply {
@@ -63,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                 intentSetting,
                 PendingIntent.FLAG_UPDATE_CURRENT
         )
-        val actionSetting : NotificationCompat.Action = NotificationCompat.Action.Builder(0, "Settings", pendingSetting).build()
+        val actionSetting: NotificationCompat.Action = NotificationCompat.Action.Builder(0, "Settings", pendingSetting).build()
 
         val notification = NotificationCompat.Builder(this@MainActivity, channelId)
                 .setContentTitle("Demo Title")
@@ -74,6 +88,7 @@ class MainActivity : AppCompatActivity() {
                 .setContentIntent(pendingIntent)
                 .addAction(actionDetails)
                 .addAction(actionSetting)
+                .addAction(replyAction)
                 .build()
         notificationManager?.notify(notificationId, notification)
     }
