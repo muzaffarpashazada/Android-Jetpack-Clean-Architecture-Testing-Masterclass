@@ -19,8 +19,9 @@ class MainActivity : AppCompatActivity() {
             .getRetrofitInstance()
             .create(AlbumService::class.java)
 
-        getRequestWithPathParam()
-        getRequestWithQueryParam()
+//        getRequestWithPathParam()
+//        getRequestWithQueryParam()
+        updateAlbum()
     }
 
     private fun getRequestWithPathParam() {
@@ -54,6 +55,26 @@ class MainActivity : AppCompatActivity() {
                     textView.append(result)
                 }
             }
+        })
+    }
+
+    private fun updateAlbum() {
+        val album = AlbumItem(0, "My title", 66)
+        val postResponse: LiveData<Response<AlbumItem>> = liveData {
+            val response = retService.uploadAlbum(album)
+            emit(response)
+        }
+
+        postResponse.observe(this, Observer {
+            val receivedAlbumItem = it.body()
+
+            receivedAlbumItem?.let {
+                val result = " " + "Album Title :  ${receivedAlbumItem.title}" + "\n" +
+                        " " + "Album id : ${receivedAlbumItem.id}" + "\n" +
+                        " " + "Album userId : ${receivedAlbumItem.userId}" + "\n\n\n"
+                textView.append(result)
+            }
+
         })
     }
 
