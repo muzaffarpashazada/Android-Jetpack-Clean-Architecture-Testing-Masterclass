@@ -16,6 +16,23 @@ class MainActivity : AppCompatActivity() {
         val retrofitService: AlbumService = RetrofitInstance
             .getRetrofitInstance()
             .create(AlbumService::class.java)
+
+
+        val pathResponse: LiveData<Response<AlbumItem>> = liveData {
+            val response = retrofitService.getAlbumById(2)
+            emit(response)
+        }
+        pathResponse.observe(this, Observer {
+            val album = it.body()
+            if (album != null) {
+                val result = " " + "Album Title :  ${album.title}" + "\n" +
+                        " " + "Album id : ${album.id}" + "\n" +
+                        " " + "Album userId : ${album.userId}" + "\n\n\n"
+
+                textView.append(result)
+            }
+        })
+
         val responseLiveData: LiveData<Response<Albums>> = liveData {
             val response = retrofitService.getStoredAlbums(2)
             emit(response)
@@ -29,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                             " " + "Album id : ${albumListItem.id}" + "\n" +
                             " " + "Album userId : ${albumListItem.userId}" + "\n\n\n"
 
-                    textView.append(result)
+//                    textView.append(result)
                 }
             }
         })
