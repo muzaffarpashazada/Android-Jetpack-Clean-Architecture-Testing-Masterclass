@@ -11,8 +11,8 @@ class UploadWorker(context: Context, params: WorkerParameters) : Worker(context,
         return try {
             Log.e("YER", "Uploading Start!")
 
-            for (i in 0..100) {
-                Log.e("YER", "Uploading $i%")
+            for (i in 0..10000) {
+                Log.e("YER", "Uploading $i")
             }
             Log.e("YER", "Uploading Finish!")
 
