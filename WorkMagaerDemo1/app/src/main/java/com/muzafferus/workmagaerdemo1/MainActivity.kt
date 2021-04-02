@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val workManager = WorkManager.getInstance(applicationContext)
 
         val data: Data = Data.Builder()
-            .putInt(KEY_COUNT_VALUE, 667)
+            .putInt(KEY_COUNT_VALUE, 67)
             .build()
         val constraints = Constraints.Builder()
             .setRequiresCharging(true)
@@ -37,7 +37,25 @@ class MainActivity : AppCompatActivity() {
             .setConstraints(constraints)
             .setInputData(data)
             .build()
-        workManager.enqueue(uploadRequest)
+
+
+        val filteringRequest = OneTimeWorkRequest.Builder(FilteringWorker::class.java)
+            .build()
+        val compressingRequest = OneTimeWorkRequest.Builder(CompressingWorker::class.java)
+            .build()
+        val downloadingRequest = OneTimeWorkRequest.Builder(DownloadingWorker::class.java)
+            .build()
+
+        val parallelWorks:MutableList<OneTimeWorkRequest> = mutableListOf()
+        parallelWorks.add(downloadingRequest)
+        parallelWorks.add(filteringRequest)
+
+        workManager
+            .beginWith(parallelWorks)
+            .then(compressingRequest)
+            .then(uploadRequest)
+            .enqueue()
+
         workManager.getWorkInfoByIdLiveData(uploadRequest.id)
             .observe(this, Observer {
                 textView.text = it.state.name
