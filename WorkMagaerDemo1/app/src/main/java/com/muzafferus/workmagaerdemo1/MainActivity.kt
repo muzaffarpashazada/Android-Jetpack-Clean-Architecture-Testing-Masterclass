@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.work.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +19,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         uploadButton.setOnClickListener {
-            setOnTimeWorkRequest()
+//            setOnTimeWorkRequest()
+            setPeriodicWorkRequest()
         }
     }
 
@@ -46,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         val downloadingRequest = OneTimeWorkRequest.Builder(DownloadingWorker::class.java)
             .build()
 
-        val parallelWorks:MutableList<OneTimeWorkRequest> = mutableListOf()
+        val parallelWorks: MutableList<OneTimeWorkRequest> = mutableListOf()
         parallelWorks.add(downloadingRequest)
         parallelWorks.add(filteringRequest)
 
@@ -65,5 +67,13 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
                 }
             })
+    }
+
+    private fun setPeriodicWorkRequest() {
+        val periodicWorkRequest = PeriodicWorkRequest
+            .Builder(DownloadingWorker::class.java, 900000, TimeUnit.MILLISECONDS)
+            .build()
+        WorkManager.getInstance(applicationContext).enqueue(periodicWorkRequest)
+
     }
 }
