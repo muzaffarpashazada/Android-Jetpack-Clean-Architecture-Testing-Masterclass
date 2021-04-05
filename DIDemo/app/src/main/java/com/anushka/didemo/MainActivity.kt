@@ -1,7 +1,7 @@
 package com.anushka.didemo
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -9,5 +9,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val battery = Battery()
+        val memoryCard = MemoryCard()
+        val serviceProvider = ServiceProvider()
+        val simCard = SIMCard(serviceProvider)
+
+        val smartPhone = SmartPhone(battery, simCard, memoryCard)
+        smartPhone.makeACallWithRecording()
     }
 }
