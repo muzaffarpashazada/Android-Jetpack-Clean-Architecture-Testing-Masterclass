@@ -6,6 +6,7 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
+    @Inject
     lateinit var smartPhone: SmartPhone
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,15 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         DaggerSmartPhoneComponent
             .create()
-            .getSmartPhone()
-            .makeACallWithRecording()
-
-//        val battery = Battery()
-//        val memoryCard = MemoryCard()
-//        val serviceProvider = ServiceProvider()
-//        val simCard = SIMCard(serviceProvider)
-//
-//        val smartPhone = SmartPhone(battery, simCard, memoryCard)
-//        smartPhone.makeACallWithRecording()
+            .inject(this)
+        smartPhone.makeACallWithRecording()
     }
 }
