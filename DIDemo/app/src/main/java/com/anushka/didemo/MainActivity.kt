@@ -14,7 +14,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         DaggerSmartPhoneComponent
-            .create()
+            .builder()
+            .memoryCardModule(MemoryCardModule(66))
+            .build()
             .inject(this)
         smartPhone.makeACallWithRecording()
     }
