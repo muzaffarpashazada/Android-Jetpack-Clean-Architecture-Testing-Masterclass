@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/motion_layout"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    app:layoutDescription="@xml/activity_main_scene">
+
+    <TextView
+        android:id="@+id/text_view_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="register_country_header"
+        android:textSize="20sp" />
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="24dp">
+
+        <EditText
+            android:id="@+id/edit_text_country"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center_vertical"
+            android:hint="register_country_country_hint"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:inputType="text"
+            android:lines="1"
+            android:paddingRight="10dp"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_team_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/edit_text_team_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:focusable="auto"
+            android:hint="register_country_team_name_hint"
+            android:inputType="textVisiblePassword"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/image_view_clear_team_name"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignTop="@+id/edit_text_team_name"
+            android:layout_alignEnd="@+id/edit_text_team_name"
+            android:layout_alignBottom="@+id/edit_text_team_name"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:padding="14dp"
+            android:src="@drawable/ic_launcher_background"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/edit_text_team_name" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
