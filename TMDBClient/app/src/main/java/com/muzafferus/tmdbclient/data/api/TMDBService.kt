@@ -1,8 +1,8 @@
-package com.muzafferus.tmdbclient.api
+package com.muzafferus.tmdbclient.data.api
 
-import com.muzafferus.tmdbclient.data.ArtistList
-import com.muzafferus.tmdbclient.data.MovieList
-import com.muzafferus.tmdbclient.data.TvShowList
+import com.muzafferus.tmdbclient.data.model.artist.ArtistList
+import com.muzafferus.tmdbclient.data.model.movie.MovieList
+import com.muzafferus.tmdbclient.data.model.tvshow.TvShowList
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

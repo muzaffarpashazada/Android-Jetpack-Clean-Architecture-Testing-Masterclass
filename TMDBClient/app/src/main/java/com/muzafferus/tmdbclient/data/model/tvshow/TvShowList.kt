@@ -1,8 +1,9 @@
-package com.muzafferus.tmdbclient.data
+package com.muzafferus.tmdbclient.data.model.tvshow
 
 import com.google.gson.annotations.SerializedName
 
 data class TvShowList(
+
     @SerializedName("results")
     val tvShows: List<TvShow>
 )

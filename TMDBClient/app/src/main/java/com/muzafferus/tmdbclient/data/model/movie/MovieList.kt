@@ -1,8 +1,9 @@
-package com.muzafferus.tmdbclient.data
+package com.muzafferus.tmdbclient.data.model.movie
 
 import com.google.gson.annotations.SerializedName
 
 data class MovieList(
+
     @SerializedName("results")
     val movies: List<Movie>
 )
