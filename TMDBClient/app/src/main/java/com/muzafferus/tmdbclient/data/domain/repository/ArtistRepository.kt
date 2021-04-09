@@ -1,4 +1,4 @@
-package com.muzafferus.tmdbclient.data.domein.repository
+package com.muzafferus.tmdbclient.data.domain.repository
 
 import com.muzafferus.tmdbclient.data.model.artist.Artist
 

@@ -1,6 +1,6 @@
-package com.muzafferus.tmdbclient.data.domein.usecase
+package com.muzafferus.tmdbclient.data.domain.usecase
 
-import com.muzafferus.tmdbclient.data.domein.repository.TvShowRepository
+import com.muzafferus.tmdbclient.data.domain.repository.TvShowRepository
 import com.muzafferus.tmdbclient.data.model.tvshow.TvShow
 
 class UpdateTvShowsUseCase(private val tvShowsRepository: TvShowRepository) {
