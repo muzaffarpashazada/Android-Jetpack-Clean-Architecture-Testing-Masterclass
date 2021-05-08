@@ -10,12 +10,12 @@ import com.muzafferus.tmdbclient.data.model.artist.Artist
 interface ArtistDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveArtist(artist: Artist)
+    suspend fun saveArtist(artists: List<Artist>)
 
     @Query("DELETE FROM popular_artists")
     suspend fun deleteAllArtists()
 
     @Query("SELECT * FROM popular_artists")
-    suspend fun getArtist():List<Artist>
+    suspend fun getArtist(): List<Artist>
 
 }

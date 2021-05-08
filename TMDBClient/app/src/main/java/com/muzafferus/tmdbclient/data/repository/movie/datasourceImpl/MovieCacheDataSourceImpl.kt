@@ -3,8 +3,8 @@ package com.muzafferus.tmdbclient.data.repository.movie.datasourceImpl
 import com.muzafferus.tmdbclient.data.model.movie.Movie
 import com.muzafferus.tmdbclient.data.repository.movie.datasource.MovieCacheDataSource
 
-class MovieCacheDataSourceImpl :
-    MovieCacheDataSource {
+class MovieCacheDataSourceImpl : MovieCacheDataSource {
+
     private var movieList = ArrayList<Movie>()
 
     override suspend fun getMoviesFromCache(): List<Movie> {
