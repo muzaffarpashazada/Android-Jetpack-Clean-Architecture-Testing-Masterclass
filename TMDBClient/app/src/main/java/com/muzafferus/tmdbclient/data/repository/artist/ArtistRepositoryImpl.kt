@@ -1,6 +1,5 @@
 package com.muzafferus.tmdbclient.data.repository.artist
 
-
 import android.util.Log
 import com.muzafferus.tmdbclient.data.domain.repository.ArtistRepository
 import com.muzafferus.tmdbclient.data.model.artist.Artist
