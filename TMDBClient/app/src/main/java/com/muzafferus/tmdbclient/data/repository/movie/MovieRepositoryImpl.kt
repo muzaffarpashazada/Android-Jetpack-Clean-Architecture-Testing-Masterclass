@@ -1,7 +1,7 @@
 package com.muzafferus.tmdbclient.data.repository.movie
 
 import android.util.Log
-import com.muzafferus.tmdbclient.data.domain.repository.MovieRepository
+import com.muzafferus.tmdbclient.domain.repository.MovieRepository
 import com.muzafferus.tmdbclient.data.model.movie.Movie
 import com.muzafferus.tmdbclient.data.repository.movie.datasource.MovieCacheDataSource
 import com.muzafferus.tmdbclient.data.repository.movie.datasource.MovieLocalDataSource

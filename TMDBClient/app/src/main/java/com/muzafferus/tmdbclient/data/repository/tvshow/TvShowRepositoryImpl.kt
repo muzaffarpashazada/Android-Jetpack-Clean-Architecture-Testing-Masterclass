@@ -1,7 +1,7 @@
 package com.muzafferus.tmdbclient.data.repository.tvshow
 
 import android.util.Log
-import com.muzafferus.tmdbclient.data.domain.repository.TvShowRepository
+import com.muzafferus.tmdbclient.domain.repository.TvShowRepository
 import com.muzafferus.tmdbclient.data.model.tvshow.TvShow
 import com.muzafferus.tmdbclient.data.repository.tvshow.datasource.TvShowCacheDataSource
 import com.muzafferus.tmdbclient.data.repository.tvshow.datasource.TvShowLocalDataSource

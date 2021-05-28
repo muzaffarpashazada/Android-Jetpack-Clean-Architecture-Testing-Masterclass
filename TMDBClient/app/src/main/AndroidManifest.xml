@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TMDBClient">
-        <activity android:name=".data.presentation.artist.ArtistActivity"></activity>
-        <activity android:name=".data.presentation.tvshow.TvShowActivity" />
+        <activity android:name="com.muzafferus.tmdbclient.presentation.artist.ArtistActivity"></activity>
+        <activity android:name="com.muzafferus.tmdbclient.presentation.tvshow.TvShowActivity" />
 
         <uses-library
             android:name="com.google.android.wearable"
@@ -28,7 +28,7 @@
             android:value="true" />
 
         <activity
-            android:name=".data.presentation.movie.MovieActivity"
+            android:name="com.muzafferus.tmdbclient.presentation.movie.MovieActivity"
             android:label="@string/title_activity_movie">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".data.presentation.HomeActivity">
+        <activity android:name="com.muzafferus.tmdbclient.presentation.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
