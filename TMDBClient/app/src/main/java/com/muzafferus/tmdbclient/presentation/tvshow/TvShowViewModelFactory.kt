@@ -2,10 +2,11 @@ package com.muzafferus.tmdbclient.presentation.tvshow
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.muzafferus.tmdbclient.domain.usecase.GetTvShowsUseCase
 import com.muzafferus.tmdbclient.domain.usecase.UpdateTvShowsUseCase
 
 class TvShowViewModelFactory(
-    private val getTvShowsUseCase: UpdateTvShowsUseCase,
+    private val getTvShowsUseCase: GetTvShowsUseCase,
     private val updateTvShowsUseCase: UpdateTvShowsUseCase
 ) : ViewModelProvider.Factory {
 

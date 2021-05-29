@@ -17,6 +17,7 @@ android {
         versionName "1.0"
 
         buildConfigField "String", "API_KEY", "\"4291d5a5f1b10b084e1011ebef4e84a6\""
+        buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
     }
 
     buildTypes {
@@ -42,7 +43,7 @@ dependencies {
     def lifecycle_version = "2.3.1"
     def room_version = "2.2.6"
     def coroutines_version = "1.4.3"
-    def dagger_version = "2.29.1"
+    def dagger_version = "2.28.1"
     def retrofit_version = "2.9.0"
     def interceptor_version = "4.9.0"
     def glide_version = "4.12.0"
@@ -71,7 +72,7 @@ dependencies {
 
     //Dagger
     implementation "com.google.dagger:dagger:$dagger_version"
-    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
