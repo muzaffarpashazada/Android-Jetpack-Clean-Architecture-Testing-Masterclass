@@ -1,17 +1,12 @@
 
 >
 app/.gitignore,5/1/51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-:
-
-.gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 €
 Papp/src/androidTest/java/com/muzafferus/newsapicliend/ExampleInstrumentedTest.kt,7/a/7a34812d085cdac19f9a113b127dbf88dedeaa96
 q
 Aapp/src/test/java/com/muzafferus/newsapicliend/ExampleUnitTest.kt,9/2/92e5a997d8d9c21619e3629b7e9a0d22252a3db7
-A
-gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 7
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
 ;
