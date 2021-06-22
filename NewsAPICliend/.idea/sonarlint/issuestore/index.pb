@@ -21,8 +21,6 @@ X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
 <
 build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
-t
-Dapp/src/main/java/com/muzafferus/newsapicliend/data/model/Article.kt,2/0/20ce44fc9ea52a872bfd0f995b7d0dc253d0e575
 ‡
 Wapp/src/main/java/com/muzafferus/newsapicliend/domain/usecase/DeleteSavedNewsUseCase.kt,8/b/8bff7e2777e8cd308f36f529c3c1b3d79119ab60
 ˆ
