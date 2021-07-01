@@ -1,12 +1,8 @@
 
 >
 app/.gitignore,5/1/51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
 €
 Papp/src/androidTest/java/com/muzafferus/newsapicliend/ExampleInstrumentedTest.kt,7/a/7a34812d085cdac19f9a113b127dbf88dedeaa96
-q
-Aapp/src/test/java/com/muzafferus/newsapicliend/ExampleUnitTest.kt,9/2/92e5a997d8d9c21619e3629b7e9a0d22252a3db7
 7
 gradlew,5/b/5bbfa66edb4db3c7c33c5181f43510990d3307f9
 ;
@@ -15,16 +11,10 @@ F
 app/proguard-rules.pro,9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9
 ?
 settings.gradle,0/5/05efc8b1657769a27696d478ded1e95f38737233
-n
->app/src/main/java/com/muzafferus/newsapicliend/MainActivity.kt,0/5/052f89be1c8da1e7688f4d6676658e9af6b22ae6
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-<
-build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
 ‡
 Wapp/src/main/java/com/muzafferus/newsapicliend/domain/usecase/DeleteSavedNewsUseCase.kt,8/b/8bff7e2777e8cd308f36f529c3c1b3d79119ab60
-ˆ
-Xapp/src/main/java/com/muzafferus/newsapicliend/domain/usecase/GetNewsHeadlinesUseCase.kt,1/6/16eab1e3f5422ac2b6f347ec9161994b61180040
 €
 Papp/src/main/java/com/muzafferus/newsapicliend/domain/usecase/GetSavedUseCase.kt,f/e/fea636b1f7908f8f7768497299ff46dd55af62aa
 t
@@ -42,5 +32,7 @@ A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 x
 Happ/src/main/java/com/muzafferus/newsapicliend/data/model/APIResponse.kt,c/0/c0b35a51b2ae46793d301ee2b43c493e2e0591b7
-‚
-Rapp/src/main/java/com/muzafferus/newsapicliend/domain/repository/NewsRepository.kt,e/2/e2f80b442b78d375e1663dd442749198284a5914
+y
+Iapp/src/main/java/com/muzafferus/newsapicliend/data/api/NewsAPIService.kt,c/b/cb3fb63bfd3f2f62db27cbb79866c58b17ca3a59
+t
+Dapp/src/main/java/com/muzafferus/newsapicliend/data/model/Article.kt,2/0/20ce44fc9ea52a872bfd0f995b7d0dc253d0e575
